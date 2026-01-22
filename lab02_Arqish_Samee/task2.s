@@ -13,22 +13,21 @@ main:
     beq x20, t0, Case3  #case3
     li t0, 4
     beq x20, t0, Case4  #case4
-    j exit
+    beq x0, x0, Default 
 
     Case1:
         add x21, x22, x23   #a=b+c
-        j end
+        beq x0, x0, Exit
     Case2:
         sub x21, x22, x23   #a=b-c
-        j end
+        beq x0, x0, Exit
     Case3:
         slli x21, x22, 1    #a=b*2(shift left by 1)
-        j end
+        beq x0, x0, Exit
     Case4:
         srai x21, x22, 1    #a=b/2(shift right by 1)
-        j end
-    exit:
+        beq x0, x0, Exit
+    Default:
         li x21, 0           #a=0
 
-end:
-   j end 
+Exit:
