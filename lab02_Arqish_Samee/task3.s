@@ -3,7 +3,7 @@ li x22, 0           #i=0
 li x23, 0           #sum=0 
 
 Loop1:
-    li t0, 3
+    li t0, 10
     bge x22, t0, Reset  #if i>=10 then next loop
     slli t1, x22, 2     #t1=i*4
     add t2, x10, t1     #t2=a[i]
@@ -16,7 +16,7 @@ Reset:
 
 
 Loop2:
-    li t0, 3
+    li t0, 10
     bge x22, t0, Exit   
     slli t1, x22, 2     
     add t2, x10, t1    
